@@ -1,0 +1,20 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background-color:white;
+}
+
+h1{
+    background-color:darkcyan;
+    color: white;
+    padding:20px;
+}
+#thumbnail_pane, h1{
+    text-align:center;
+}
+
+#pbobs{
+    margin:30px;
+}

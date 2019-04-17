@@ -1,0 +1,54 @@
+CREATE DATABASE VENDAS
+    USE VENDAS
+GO
+
+
+CREATE TABLE venda(
+    cd_venda int not null,
+    dt_venda datetime null,
+    vl_total money null,
+)
+
+go
+
+CREATE TABLE produto(
+    cd_produto int not null,
+    ds_produto varchar(40) null,
+    vl_produto money null,
+)
+
+go
+
+CREATE TABLE vendaProduto(
+    cd_venda int not null,
+    cd_produto int not null,
+    qt_vendida int null,
+)
+
+go
+
+CHAVES PRIMARIAS
+ALTER TABLE venda
+    ADD PRIMARY KEY(cd_venda)
+go
+
+ALTER TABLE produto
+    ADD PRIMARY KEY(cd_produto)
+go
+
+ALTER TABLE vendaProduto
+    ADD PRIMARY KEY(cd_venda,cd_produto)
+go
+
+CHAVES ESTRANGEIRAS
+ALTER TABLE vendaProduto
+    ADD FOREIGN KEY(cd_venda)
+    REFERENCES venda
+go
+
+ALTER TABLE vendaProduto
+    ADD FOREIGN KEY(cd_venda)
+    REFERENCES produto
+go
+
+
